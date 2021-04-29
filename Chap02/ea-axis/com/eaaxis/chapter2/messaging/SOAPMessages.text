@@ -1,0 +1,46 @@
+Listen Port: 7080
+Target Host: localhost
+Target Port: 8080
+==== Request ====
+POST /ea-axis/services/CatalogPublisherService HTTP/1.0
+Content-Length: 1064
+Host: localhost
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <SOAP-ENV:Body><CATALOG xmlns="http://www.wrox.com/eaaxis/catalog">
+       <DOCUMENTINFO>
+           <DATE>02/15/2002</DATE>
+       </DOCUMENTINFO>
+       <SUPPLIERDETAILS>
+           <SUPPLIERID>12345-56789</SUPPLIERID>
+	   <SUPPLIERCONTACTEMAIL>support@supplier.com</SUPPLIERCONTACTEMAIL>
+       </SUPPLIERDETAILS>
+       <PRODUCTLIST>
+	   <PRODUCT>
+  	       <SUPPLIER-PRODUCTSKU>SKU-1</SUPPLIER-PRODUCTSKU>
+	       <PRODUCTDESC>Toyota Spark Plug</PRODUCTDESC>
+	       <PRODUCTPRICE>10.99</PRODUCTPRICE>
+	       <PRODUCTUOM>Each</PRODUCTUOM>
+	   </PRODUCT>
+	   <PRODUCT>
+  	       <SUPPLIER-PRODUCTSKU>SKU-2</SUPPLIER-PRODUCTSKU>
+	       <PRODUCTDESC>Toyota Wiper</PRODUCTDESC>
+	       <PRODUCTPRICE>2.99</PRODUCTPRICE>
+	       <PRODUCTUOM>Each</PRODUCTUOM>
+	   </PRODUCT>
+       </PRODUCTLIST>
+</CATALOG> </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>==== Response ====
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Content-Length: 426
+Date: Sat, 16 Feb 2002 20:16:25 GMT
+Server: Apache Tomcat/4.0.1 (HTTP/1.1 Connector)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <SOAP-ENV:Body><ns1:CATALOGUPDATE xmlns:ns1="http://www.wrox.com/eaaxis/catalogupdate"><ITEMCOUNT>2</ITEMCOUNT><DATERECEIVED>02/16/2002</DATERECEIVED></ns1:CATALOGUPDATE> </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

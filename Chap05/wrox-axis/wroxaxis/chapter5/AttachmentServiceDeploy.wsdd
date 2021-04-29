@@ -1,0 +1,13 @@
+<deployment 
+          xmlns="http://xml.apache.org/axis/wsdd/" 
+          xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+  <service name="AttachmentService" provider="java:RPC">
+    <parameter name="className" value="wroxaxis.chapter5.SparePartAttachmentService"/>
+    <parameter name="allowedMethods" value="addImage"/>
+  </service>
+<typeMapping qname="ns1:DataHandler" xmlns:ns1="AttachmentService"
+     languageSpecificType="java:javax.activation.DataHandler" 
+     serializer="org.apache.axis.encoding.ser.JAFDataHandlerSerializer" 
+     deserializer="org.apache.axis.encoding.ser.JAFDataHandlerDeserializerFactory"
+     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</deployment>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="adminPassword" value="admin"/>
+  <parameter name="attachments.Directory" value="D:\jakarta-tomcat\webapps\ea-axis\WEB-INF\attachments"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <requestFlow>
+   <handler type="java:org.apache.axis.handlers.JWSHandler"/>
+  </requestFlow>
+ </globalConfiguration>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <handler name="MsgDispatcher" type="java:org.apache.axis.providers.java.MsgProvider"/>
+ <handler name="RPCDispatcher" type="java:org.apache.axis.providers.java.RPCProvider"/>
+ <service name="SparePartPrice" provider="java:RPC">
+  <parameter name="allowedMethods" value="getPrice"/>
+  <parameter name="className" value="com.eaaxis.chapter2.SparePartPrice"/>
+ </service>
+ <service name="AdminService" provider="java:MSG">
+  <parameter name="methodName" value="AdminService"/>
+  <parameter name="enableRemoteAdmin" value="false"/>
+  <parameter name="className" value="org.apache.axis.utils.Admin"/>
+ </service>
+ <service name="CatalogPublisherService" provider="java:MSG">
+  <parameter name="allowedMethods" value="publishCatalog"/>
+  <parameter name="className" value="com.eaaxis.chapter2.messaging.CatalogPublisherService"/>
+ </service>
+ <service name="http://soapinterop.org/" provider="java:RPC">
+  <parameter name="methodName" value="*"/>
+  <parameter name="className" value="samples.echo.EchoService"/>
+ </service>
+ <service name="MessageService" provider="java:MSG">
+  <parameter name="allowedMethods" value="echoElements"/>
+  <parameter name="className" value="samples.message.MessageService"/>
+ </service>
+ <service name="SparePartDescription" provider="java:RPC">
+  <parameter name="allowedMethods" value="getDescription"/>
+  <parameter name="className" value="com.eaaxis.chapter2.skeleton.SparePartDescriptionSoapBindingSkeleton"/>
+ </service>
+ <service name="JWSProcessor" provider="Handler">
+  <parameter name="handlerClass" value="org.apache.axis.handlers.JWSProcessor"/>
+ </service>
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+   <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </requestFlow>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="java:org.apache.axis.transport.local.LocalResponder"/>
+  </responseFlow>
+ </transport>
+ <beanMapping languageSpecificType="java:samples.echo.SOAPStruct" qname="ns1:SOAPStruct" xmlns:ns1="http://soapinterop.org/xsd"/>
+</deployment>

@@ -1,0 +1,5 @@
+java org.apache.axis.wsdl.WSDL2Java -o %AXIS_DEVHOME% -p com.eaaxis.chapter2.stubs http://localhost:8080/ea-axis/services/SparePartPrice?wsdl
+
+java org.apache.axis.wsdl.WSDL2Java -o %AXIS_DEVHOME% -p com.eaaxis.chapter2.skeleton -s SparePartDescription.wsdl
+
+java org.apache.axis.wsdl.WSDL2Java -o %AXIS_DEVHOME% -p com.eaaxis.chapter2.stubs http://localhost:8080/ea-axis/services/SparePartPrice?wsdl

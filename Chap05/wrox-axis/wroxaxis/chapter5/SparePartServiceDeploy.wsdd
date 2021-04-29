@@ -1,0 +1,10 @@
+<deployment name="SparePartService" xmlns="http://xml.apache.org/axis/wsdd/" 
+            xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <service name="SparePartDetails" provider="java:RPC">
+    <parameter name="className" value="wroxaxis.chapter5.SparePartService"/>
+    <parameter name="allowedMethods" value="getSparePart addSparePart"/>
+    <beanMapping qname="wroxaxisNS:SparePartBean" xmlns:wroxaxisNS="SparePartDetails"
+               languageSpecificType="java:wroxaxis.chapter5.SparePartBean"/>
+  </service>
+</deployment>

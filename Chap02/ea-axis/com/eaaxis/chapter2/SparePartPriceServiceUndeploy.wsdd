@@ -1,0 +1,3 @@
+<undeployment name="SparePartPrice" xmlns="http://xml.apache.org/axis/wsdd/">
+  <service name="SparePartPrice"/>
+</undeployment>

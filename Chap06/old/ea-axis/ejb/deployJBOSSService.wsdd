@@ -1,0 +1,11 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" 
+            xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+            xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+<service name="SparePartPriceJBOSSEJB" provider="java:EJB">
+      <parameter name="beanJndiName" value="SparePartPriceJNDIName"/>
+      <parameter name="homeInterfaceName" value="com.eaaxis.chapter6.SparePartPriceSessionHome"/>
+      <parameter name="allowedMethods" value="getSparePartPrice"/>
+      <parameter name="jndiURL" value="jnp://localhost:1099"/>
+      <parameter name="jndiContextClass" value="org.jnp.interfaces.NamingContextFactory"/>
+</service>
+</deployment>

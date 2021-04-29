@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+<service name="SparePartDetailsSer" provider="java:RPC">
+    <parameter name="allowedMethods" value="getSparePart addSparePart"/>
+    <parameter name="className" value="com.eaaxis.chapter5.SparePartService"/>
+    <typeMapping deserializer="com.eaaxis.chapter5.EaAxisDeserFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" qname="EaAxisNS:SparePartBean" serializer="com.eaaxis.chapter5.EaAxisSerializer" type="java:com.eaaxis.chapter5.SparePartBean" xmlns:EaAxisNS="SparePartDetailsSer"/>
+   </service>
+
+</deployment>

@@ -1,0 +1,10 @@
+<deployment name="SparePartService" xmlns="http://xml.apache.org/axis/wsdd/" 
+            xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+            xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+<service name="SparePartDetails" provider="java:RPC">
+<parameter name="className" value="com.eaaxis.chapter5.SparePartService"/>
+<parameter name="allowedMethods" value="getSparePart addSparePart"/>
+<beanMapping qname="eaaxisNS:SparePartBean" xmlns:eaaxisNS="SparePartDetails"
+               languageSpecificType="java:com.eaaxis.chapter5.SparePartBean"/>
+</service>
+</deployment>

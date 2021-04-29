@@ -1,0 +1,32 @@
+<deployment name="FaultService" xmlns="http://xml.apache.org/axis/wsdd/" 
+            xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+            xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+<handler name="Handler1" type="java:com.eaaxis.chapter4.handlers.Handler1">
+  <parameter name="logfilename" value="d:\\ea-axis\\fault.log"/>
+</handler>
+<handler name="Handler2" type="java:com.eaaxis.chapter4.handlers.Handler2">
+  <parameter name="logfilename" value="d:\\ea-axis\\fault.log"/>
+</handler>
+<handler name="Handler3" type="java:com.eaaxis.chapter4.handlers.Handler3">
+  <parameter name="logfilename" value="d:\\ea-axis\\fault.log"/>
+</handler>
+
+<!-- Define the Service (SparePartInfo) -->
+<service name="FaultService" provider="java:RPC">
+
+     <requestFlow>
+	<handler type="Handler1"/>
+	<handler type="Handler2"/>
+     </requestFlow>
+     
+     <responseFlow>
+         <handler type="Handler3"/>
+     </responseFlow>
+
+  <parameter name="className" value="com.eaaxis.chapter4.SparePartInfo"/>
+  <parameter name="allowedMethods" value="getPartInfo"/>
+
+</service>
+
+</deployment>

@@ -1,0 +1,3 @@
+D:\ea-axis\com\eaaxis\chapter2\messaging>java org.apache.axis.client.AdminClient -l http://localhost:8080/ea-axis/services/AdminService deploy.wsdd
+Processing file deploy.wsdd
+<Admin>Done processing</Admin>

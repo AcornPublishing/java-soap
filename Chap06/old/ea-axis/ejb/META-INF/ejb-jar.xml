@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE ejb-jar PUBLIC '-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN' 'http://java.sun.com/j2ee/dtds/ejb-jar_2_0.dtd'>
+<ejb-jar>
+    <description>SparePartPrice Session EJB</description>
+    <display-name>SparePartPriceSessionBean</display-name>
+    <enterprise-beans>
+        <session>
+            <ejb-name>SparePartPriceSessionBean</ejb-name>
+            <home>com.eaaxis.chapter6.SparePartPriceSessionHome</home>
+            <remote>com.eaaxis.chapter6.SparePartPriceSession</remote>
+            <ejb-class>com.eaaxis.chapter6.SparePartPriceSessionBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+    </enterprise-beans>
+    <assembly-descriptor>
+        <container-transaction>
+            <method>
+                <ejb-name>SparePartPriceSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>*</method-name>
+            </method>
+            <method>
+                <ejb-name>SparePartPriceSessionBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <method>
+                <ejb-name>SparePartPriceSessionBean</ejb-name>
+                <method-intf>Home</method-intf>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>NotSupported</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+</ejb-jar>

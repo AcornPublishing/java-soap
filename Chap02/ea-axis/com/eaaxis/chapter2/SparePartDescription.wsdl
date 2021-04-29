@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8080/ea-axis/services/SparePartDescription" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:impl="http://localhost:8080/ea-axis/services/SparePartDescription-impl" xmlns:intf="http://localhost:8080/ea-axis/services/SparePartDescription" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:message name="getDescriptionRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getDescriptionResponse">
+    <wsdl:part name="return" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="SparePartDescription">
+    <wsdl:operation name="getDescription" parameterOrder="in0">
+      <wsdl:input message="intf:getDescriptionRequest"/>
+      <wsdl:output message="intf:getDescriptionResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SparePartDescriptionSoapBinding" type="intf:SparePartDescription">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDescription">
+      <wsdlsoap:operation soapAction="" style="rpc"/>
+      <wsdl:input>
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/ea-axis/services/SparePartDescription" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/ea-axis/services/SparePartDescription" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SparePartDescriptionService">
+    <wsdl:port binding="intf:SparePartDescriptionSoapBinding" name="SparePartDescription">
+      <wsdlsoap:address location="http://localhost:8080/ea-axis/services/SparePartDescription"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

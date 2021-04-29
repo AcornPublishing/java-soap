@@ -1,0 +1,3 @@
+<undeployment name="CatalogPublisherService" xmlns="http://xml.apache.org/axis/wsdd/">
+  <service name="CatalogPublisherService"/>
+</undeployment>

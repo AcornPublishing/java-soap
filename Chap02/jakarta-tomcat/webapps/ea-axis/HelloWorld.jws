@@ -1,0 +1,18 @@
+/*
+ * HelloWorld.java
+ *
+ * Our First Web Service in Axis
+ */
+
+public class HelloWorld {
+
+    /** Creates new HelloWorld */
+    public HelloWorld() {
+    }
+
+    /** Our main method which returns the "Hello World" message */
+    public String getHelloWorldMessage(String name) {
+      return "Hello World to " + name;
+    }
+
+}

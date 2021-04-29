@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss>
+  <enterprise-beans>
+    <session>
+      <ejb-name>SparePartPriceSessionBean</ejb-name>
+      <jndi-name>SparePartPriceJNDIName</jndi-name>
+    </session>
+  </enterprise-beans>
+</jboss>
+

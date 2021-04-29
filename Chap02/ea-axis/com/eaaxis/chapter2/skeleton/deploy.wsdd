@@ -1,0 +1,20 @@
+<!-- Use this file to deploy some handlers/chains and services   -->
+<!-- Two ways to do this:                                        -->
+<!--   java org.apache.axis.utils.Admin deploy.wsdd              -->
+<!--      from the same directory that the Axis engine runs      -->
+<!-- or                                                          -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd       -->
+<!--      after the axis server is running                       -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SparePartDescriptionService WSDL service -->
+
+  <service name="SparePartDescription" provider="java:RPC">
+      <parameter name="className" value="com.eaaxis.chapter2.skeleton.SparePartDescriptionSoapBindingSkeleton"/>
+      <parameter name="allowedMethods" value="getDescription"/>
+
+  </service>
+</deployment>

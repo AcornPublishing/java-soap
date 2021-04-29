@@ -1,0 +1,11 @@
+<!-- SPI-deploy.wsdd -->
+<deployment name="SparePartInfo" 
+      mlns="http://xml.apache.org/axis/wsdd/" 
+      xmlns:java="http://xml.apache.org/axis/wsdd/providers/java"
+      xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+  <service name="SparePartInfo" provider="java:RPC">
+    <parameter name="className" 
+               value="wroxaxis.chapter4.SparePartInfo"/>
+    <parameter name="allowedMethods" value="getPartInfo"/>
+  </service>
+</deployment>

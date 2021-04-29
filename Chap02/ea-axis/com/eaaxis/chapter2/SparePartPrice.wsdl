@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8080/ea-axis/services/SparePartPrice" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:impl="http://localhost:8080/ea-axis/services/SparePartPrice-impl" xmlns:intf="http://localhost:8080/ea-axis/services/SparePartPrice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:message name="getPriceResponse">
+    <wsdl:part name="return" type="xsd:float"/>
+  </wsdl:message>
+  <wsdl:message name="getPriceRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="SparePartPrice">
+    <wsdl:operation name="getPrice" parameterOrder="in0">
+      <wsdl:input message="intf:getPriceRequest"/>
+      <wsdl:output message="intf:getPriceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SparePartPriceSoapBinding" type="intf:SparePartPrice">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPrice">
+      <wsdlsoap:operation soapAction="" style="rpc"/>
+      <wsdl:input>
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/ea-axis/services/SparePartPrice" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/ea-axis/services/SparePartPrice" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SparePartPriceService">
+    <wsdl:port binding="intf:SparePartPriceSoapBinding" name="SparePartPrice">
+      <wsdlsoap:address location="http://localhost:8080/ea-axis/services/SparePartPrice"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

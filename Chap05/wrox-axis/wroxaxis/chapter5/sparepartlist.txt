@@ -1,0 +1,9 @@
+SKU-111|100.00f|Honda Spark Plug
+SKU-112|20.00f|Toyota Spark Plug
+SKU-113|40.00f|Nissan Spark Plug
+SKU-333|50.0|Air Filter Model: 12345|
+SKU-333|50.0|Air Filter Model: 12345|
+SKU-114|50.0|Air Filter Model: 12345|
+SKU-114|50.0|Air Filter Model: 12345|
+SKU-114|50.0|Air Filter Model: 12345|
+null|0.0|null|

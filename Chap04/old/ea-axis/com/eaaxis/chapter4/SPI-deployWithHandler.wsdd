@@ -1,0 +1,23 @@
+<deployment name="SparePartInfo" xmlns="http://xml.apache.org/axis/wsdd/" 
+            xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+            xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+<!-- Define the Handler i.e. RequestLogHandler -->
+<handler name="EAAxisRequestLogger" type="java:com.eaaxis.chapter4.handlers.EAAxisRequestLogger">
+  <parameter name="logfilename" value="d:\\ea-axis\\Request.log"/>
+</handler>
+
+
+<!-- Define the Service (SparePartInfo) -->
+<service name="SparePartInfo" provider="java:RPC">
+
+     <requestFlow>
+	<handler type="EAAxisRequestLogger"/>
+     </requestFlow>
+
+  <parameter name="className" value="com.eaaxis.chapter4.SparePartInfo"/>
+  <parameter name="allowedMethods" value="getPartInfo"/>
+
+</service>
+
+</deployment>

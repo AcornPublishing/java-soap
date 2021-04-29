@@ -1,0 +1,23 @@
+<deployment name="SparePartInfo" xmlns="http://xml.apache.org/axis/wsdd/" 
+            xmlns:java="http://xml.apache.org/axis/wsdd/providers/java"
+            xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+
+<!-- Define the Handler i.e. AxisRequestLogger -->
+<handler name="AxisRequestLogger" type="java:wroxaxis.chapter4.handlers.AxisRequestLogger">
+  <parameter name="logfilename" value="d:\\wrox-axis\\Request.log"/>
+</handler>
+
+
+<!-- Define the Service (SparePartInfo) -->
+<service name="SparePartInfo" provider="java:RPC">
+
+     <requestFlow>
+	<handler type="AxisRequestLogger"/>
+     </requestFlow>
+
+  <parameter name="className" value="wroxaxis.chapter4.SparePartInfo"/>
+  <parameter name="allowedMethods" value="getPartInfo"/>
+
+</service>
+
+</deployment>
